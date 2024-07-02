@@ -1,0 +1,58 @@
+.navbar {
+    width: 100vw;
+    overflow-x: hidden;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.logo {
+    padding-left: 1rem;
+}
+
+.navlists {
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.listitems {
+    font-weight: 600;
+    font-size: 27px;
+    list-style-type: none;
+    font-family: "Lily Script One";
+}
+
+.navaction {
+    font-weight: 600;
+    font-size: 20px;
+    font-family: "Lilita One";
+    background-color: #FFA500;
+    border: none;
+    color: white;
+    padding: 0.6rem;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .navaction {
+        font-size: 10px;
+    }
+    .listitems {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .navaction {
+        font-size: 10px;
+    }
+    .listitems {
+        font-size: 14px;
+    }
+}
