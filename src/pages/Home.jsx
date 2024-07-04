@@ -15,7 +15,7 @@ import pro5 from '../ascerts/Landingpromotion/5.jpg'
 import pro6 from '../ascerts/Landingpromotion/6.jpg'
 import pro7 from '../ascerts/Landingpromotion/7.jpg'
 import pro8 from '../ascerts/Landingpromotion/8.jpg'
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 
 export default function Landing() {
@@ -31,63 +31,71 @@ export default function Landing() {
         autoplaySpeed: 2000
     };
     return (
-        localStorage.getItem("userlogin") ? 
-        <div className='landingpage'>
-            <div className="slider">
-                <Slider {...settings}>
-                    <div className='bg1 sliderbg'>
+        localStorage.getItem("userlogin") ?
+            <div className='landingpage'>
+                <div className="slider">
+                    <Slider {...settings}>
+                        <div className='bg1 sliderbg'>
+                        </div>
+                        <div className='bg2 sliderbg'>
+                        </div>
+                        <div className='bg3 sliderbg'>
+                        </div>
+                        <div className='bg4 sliderbg'>
+                        </div>
+                    </Slider>
+                </div>
+                <div className="categoryitems">
+                    <div className="catwrap">
+                        <div className="catitems">
+                            <Link className='catergoylins' to={'/menu/burger'}>
+                                <img className='cateitemimg' src={img1} alt="hads" />
+                                <h3 className="catename">Burger</h3>
+                            </Link>
+                        </div>
+                        <div className="catitems">
+                            <Link className='catergoylins' to={'/menu/biryani'}>
+                                <img className='cateitemimg' src={img2} alt="" />
+                                <h3 className="catename">Biryani</h3>
+                            </Link>
+                        </div>
+                        <div className="catitems">
+                            <Link className='catergoylins' to={'/menu/milkshakes'}>
+                                <img className='cateitemimg' src={img3} alt="" />
+                                <h3 className="catename">Milk Shakes</h3>
+                            </Link>
+                        </div>
+                        <div className="catitems">
+                            <Link className='catergoylins' to={'/menu/breakfast'}>
+                                <img className='cateitemimg' src={img4} alt="" />
+                                <h3 className="catename">Breskfast</h3>
+                            </Link>
+                        </div>
                     </div>
-                    <div className='bg2 sliderbg'>
+                </div>
+                <div className="promotionlanding">
+                    <div className="promotion1">
+                        <h2>Special Items of us</h2>
+                        <div className="proimgs">
+                            {promotion1.map((pro, index) => {
+                                return (
+                                    <img key={index} className='promotionimg' src={pro} alt="" />
+                                )
+                            })}
+                        </div>
                     </div>
-                    <div className='bg3 sliderbg'>
-                    </div>
-                    <div className='bg4 sliderbg'>
-                    </div>
-                </Slider>
-            </div>
-            <div className="categoryitems">
-                <div className="catwrap">
-                    <div className="catitems">
-                        <img className='cateitemimg' src={img1} alt="hads" />
-                        <h3 className="catename">Burger</h3>
-                    </div>
-                    <div className="catitems">
-                        <img className='cateitemimg' src={img2} alt="" />
-                        <h3 className="catename">Biryani</h3>
-                    </div>
-                    <div className="catitems">
-                        <img className='cateitemimg' src={img3} alt="" />
-                        <h3 className="catename">Milk Shakes</h3>
-                    </div>
-                    <div className="catitems">
-                        <img className='cateitemimg' src={img4} alt="" />
-                        <h3 className="catename">Breskfast</h3>
+                    <div className="promotion2">
+                        <h2>Top Pics by Customers</h2>
+                        <div className="proimgs">
+                            {promotion2.map((pro, index) => {
+                                return (
+                                    <img key={index} className='promotionimg' src={pro} alt="" />
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="promotionlanding">
-                <div className="promotion1">
-                    <h2>Special Items of us</h2>
-                    <div className="proimgs">
-                        {promotion1.map((pro, index) => {
-                            return (
-                                <img key={index} className='promotionimg' src={pro} alt="" />
-                            )
-                        })}
-                    </div>
-                </div>
-                <div className="promotion2">
-                    <h2>Top Pics by Customers</h2>
-                    <div className="proimgs">
-                        {promotion2.map((pro, index) => {
-                            return (
-                                <img key={index} className='promotionimg' src={pro} alt="" />
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
-        </div>
-        : <Navigate to={'/login'} />
+            : <Navigate to={'/login'} />
     )
 }

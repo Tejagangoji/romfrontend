@@ -5,6 +5,11 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Menu from './pages/Menu';
+import Wholemenu from './pages/Wholemenu';
+import Contact from './pages/Contact';
+import Cart from './pages/Cart';
+import Orders from './pages/Orders';
 
 /* admin */
 import Adminlogin from './pages/admin/Adminlogin';
@@ -26,6 +31,21 @@ function App() {
       <Routes>
         <Route path='/' Component={Withnavandfot}>
           <Route path='/' Component={Home} />
+        </Route>
+        <Route path='/menu/:category' Component={Withnavandfot}>
+          <Route path='/menu/:category' Component={Menu} />
+        </Route>
+        <Route path='/menu' Component={Withnavandfot}>
+          <Route path='/menu' Component={Wholemenu} />
+        </Route>
+        <Route path='/contact' Component={Withnavandfot}>
+          <Route path='/contact' Component={Contact} />
+        </Route>
+        <Route path='/cart' Component={Withnavandfot}>
+          <Route path='/cart' Component={Cart} />
+        </Route>
+        <Route path='/orders' Component={Withnavandfot}>
+          <Route path='/orders' Component={Orders} />
         </Route>
         <Route path='/login' Component={Login} />
         <Route path='/register' Component={Register} />

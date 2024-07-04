@@ -74,6 +74,15 @@
     align-items: center;
 }
 
+.catergoylins {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
 @media (max-width: 480px) {
     .sliderbg {
         height: 50vh;

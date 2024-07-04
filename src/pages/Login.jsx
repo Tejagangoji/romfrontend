@@ -29,7 +29,7 @@ export default function Login() {
         axios.post("http://localhost:5000/login", {
             email: data.get('email'),
             password: data.get('password'),
-        }).then(res => {localStorage.setItem("userlogin", "true"); return navigate('/')}).catch(err => alert(err.response.data))
+        }).then(res => {localStorage.setItem("userlogin", res.data); return navigate('/')}).catch(err => alert(err.response.data))
     };
 
     return (

@@ -13,10 +13,10 @@ export default function Navbar() {
       <div className="part1"><h2 className="logo">Logo</h2></div>
       <div className='part2'>
         <ul className='navlists'>
-          <li className='listitems'>Home</li>
-          <li className='listitems'>Menu</li>
-          <li className='listitems'>Contact</li>
-          <li className='listitems'>Cart</li>
+          <li className='listitems'><Link className='links' to={'/'}>Home</Link></li>
+          <li className='listitems'><Link className='links' to={'/menu'}>Menu</Link></li>
+          <li className='listitems'><Link className='links' to={'/contact'}>Contact</Link></li>
+          <li className='listitems'><Link className='links' to={'/cart'}>Cart</Link></li>
           <li className='listitems'><button onClick={logout} className='navaction'>Logout</button></li>
         </ul>
       </div>
